@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prakse", "Prakse\Prakse.csproj", "{3C0824CE-D257-455F-9721-57509F0A1449}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{CD4B3B87-9A6A-4284-9265-2FCF2410F619}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C0824CE-D257-455F-9721-57509F0A1449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0824CE-D257-455F-9721-57509F0A1449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0824CE-D257-455F-9721-57509F0A1449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0824CE-D257-455F-9721-57509F0A1449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD4B3B87-9A6A-4284-9265-2FCF2410F619}.Debug|Any CPU.ActiveCfg = Debug
+		{CD4B3B87-9A6A-4284-9265-2FCF2410F619}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4402BD18-DC5A-4093-AC3A-BF856D4E0699}
+	EndGlobalSection
+EndGlobal
