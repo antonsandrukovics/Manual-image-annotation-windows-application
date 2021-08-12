@@ -1,6 +1,6 @@
 ﻿namespace Prakse
 {
-    partial class StartForm
+    partial class startForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(startForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jaunuDatuKopaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewDataset = new System.Windows.Forms.ToolStripMenuItem();
             this.atvērtDatuKopuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aizvērtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,30 +67,33 @@
             // fiToolStripMenuItem
             // 
             this.fiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.jaunuDatuKopaToolStripMenuItem,
+            this.createNewDataset,
             this.atvērtDatuKopuToolStripMenuItem,
             this.aizvērtToolStripMenuItem});
             this.fiToolStripMenuItem.Name = "fiToolStripMenuItem";
             this.fiToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.fiToolStripMenuItem.Text = "Fails";
             // 
-            // jaunuDatuKopaToolStripMenuItem
+            // createNewDataset
             // 
-            this.jaunuDatuKopaToolStripMenuItem.Name = "jaunuDatuKopaToolStripMenuItem";
-            this.jaunuDatuKopaToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.jaunuDatuKopaToolStripMenuItem.Text = "Izveidot jaunu datukopu...";
+            this.createNewDataset.Name = "createNewDataset";
+            this.createNewDataset.Size = new System.Drawing.Size(211, 22);
+            this.createNewDataset.Text = "Izveidot jaunu datukopu...";
+            this.createNewDataset.Click += new System.EventHandler(this.CreateNewDataset_Click);
             // 
             // atvērtDatuKopuToolStripMenuItem
             // 
             this.atvērtDatuKopuToolStripMenuItem.Name = "atvērtDatuKopuToolStripMenuItem";
             this.atvērtDatuKopuToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.atvērtDatuKopuToolStripMenuItem.Text = "Atvērt datukopu...";
+            this.atvērtDatuKopuToolStripMenuItem.Click += new System.EventHandler(this.OpenDataset_Click);
             // 
             // aizvērtToolStripMenuItem
             // 
             this.aizvērtToolStripMenuItem.Name = "aizvērtToolStripMenuItem";
             this.aizvērtToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.aizvērtToolStripMenuItem.Text = "Aizvērt";
+            this.aizvērtToolStripMenuItem.Click += new System.EventHandler(this.CloseApplication_Click);
             // 
             // fileToolStripMenuItem
             // 
@@ -160,6 +163,7 @@
             this.CloseLabel.TabIndex = 18;
             this.CloseLabel.Text = "X";
             this.CloseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CloseLabel.Click += new System.EventHandler(this.CloseApplication_Click);
             // 
             // MinimLabel
             // 
@@ -171,6 +175,7 @@
             this.MinimLabel.TabIndex = 17;
             this.MinimLabel.Text = "_";
             this.MinimLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MinimLabel.Click += new System.EventHandler(this.MinimLabel_Click);
             // 
             // pictureBox5
             // 
@@ -209,7 +214,7 @@
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
-            // StartForm
+            // startForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,9 +232,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "StartForm";
+            this.Name = "startForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.StartForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -258,7 +262,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ToolStripMenuItem jaunuDatuKopaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewDataset;
         private System.Windows.Forms.ToolStripMenuItem atvērtDatuKopuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aizvērtToolStripMenuItem;
     }

@@ -46,6 +46,7 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -68,62 +69,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddToTxtDataSetLocation.cs" />
-    <Compile Include="EmptyDataSet.cs">
+    <Compile Include="Сlasses\AddToTxtDataSetLocation.cs" />
+    <Compile Include="Сlasses\Dataset.cs" />
+    <Compile Include="Forms\EmptyDataSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmptyDataSet.Designer.cs">
+    <Compile Include="Forms\EmptyDataSet.Designer.cs">
       <DependentUpon>EmptyDataSet.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileForm.cs">
+    <Compile Include="Forms\FileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileForm.Designer.cs">
+    <Compile Include="Forms\FileForm.Designer.cs">
       <DependentUpon>FileForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBSqlite.cs" />
-    <Compile Include="StartForm.cs">
+    <Compile Include="Сlasses\DBSqlite.cs" />
+    <Compile Include="Forms\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartForm.Designer.cs">
+    <Compile Include="Forms\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageForm.cs">
+    <Compile Include="Forms\ImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImageForm.Designer.cs">
+    <Compile Include="Forms\ImageForm.Designer.cs">
       <DependentUpon>ImageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImportForm.cs">
+    <Compile Include="Forms\ImportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImportForm.Designer.cs">
+    <Compile Include="Forms\ImportForm.Designer.cs">
       <DependentUpon>ImportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpemForm.cs">
+    <Compile Include="Forms\OpemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpemForm.Designer.cs">
+    <Compile Include="Forms\OpemForm.Designer.cs">
       <DependentUpon>OpemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EmptyDataSet.resx">
+    <EmbeddedResource Include="Forms\EmptyDataSet.resx">
       <DependentUpon>EmptyDataSet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FileForm.resx">
+    <EmbeddedResource Include="Forms\FileForm.resx">
       <DependentUpon>FileForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartForm.resx">
+    <EmbeddedResource Include="Forms\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageForm.resx">
+    <EmbeddedResource Include="Forms\ImageForm.resx">
       <DependentUpon>ImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm.resx">
+    <EmbeddedResource Include="Forms\ImportForm.resx">
       <DependentUpon>ImportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpemForm.resx">
+    <EmbeddedResource Include="Forms\OpemForm.resx">
       <DependentUpon>OpemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

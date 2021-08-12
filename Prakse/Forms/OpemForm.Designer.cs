@@ -31,7 +31,7 @@
             this.checkedListBoxWithExistingDatasets = new System.Windows.Forms.CheckedListBox();
             this.ExistingDatasets = new System.Windows.Forms.Label();
             this.newDirectoryWithFile = new System.Windows.Forms.Label();
-            this.newDirectoryWithFileName = new System.Windows.Forms.TextBox();
+            this.newDirectoryPathWithImage = new System.Windows.Forms.TextBox();
             this.newDirectoryFileLength = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -89,12 +89,12 @@
             this.newDirectoryWithFile.TabIndex = 2;
             this.newDirectoryWithFile.Text = "Izvēlēties mapi, no kuras iegūt attēlus";
             // 
-            // newDirectoryWithFileName
+            // newDirectoryPathWithImage
             // 
-            this.newDirectoryWithFileName.Location = new System.Drawing.Point(234, 80);
-            this.newDirectoryWithFileName.Name = "newDirectoryWithFileName";
-            this.newDirectoryWithFileName.Size = new System.Drawing.Size(252, 20);
-            this.newDirectoryWithFileName.TabIndex = 3;
+            this.newDirectoryPathWithImage.Location = new System.Drawing.Point(234, 80);
+            this.newDirectoryPathWithImage.Name = "newDirectoryPathWithImage";
+            this.newDirectoryPathWithImage.Size = new System.Drawing.Size(252, 20);
+            this.newDirectoryPathWithImage.TabIndex = 3;
             // 
             // newDirectoryFileLength
             // 
@@ -355,7 +355,7 @@
             this.Controls.Add(this.newDirectoryFileLength);
             this.Controls.Add(this.buttonStartSend);
             this.Controls.Add(this.buttonChoose);
-            this.Controls.Add(this.newDirectoryWithFileName);
+            this.Controls.Add(this.newDirectoryPathWithImage);
             this.Controls.Add(this.newDirectoryWithFile);
             this.Controls.Add(this.ExistingDatasets);
             this.Controls.Add(this.checkedListBoxWithExistingDatasets);
@@ -382,7 +382,7 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxWithExistingDatasets;
         private System.Windows.Forms.Label ExistingDatasets;
         private System.Windows.Forms.Label newDirectoryWithFile;
-        private System.Windows.Forms.TextBox newDirectoryWithFileName;
+        private System.Windows.Forms.TextBox newDirectoryPathWithImage;
         private System.Windows.Forms.Button buttonChoose;
         private System.Windows.Forms.Button buttonStartSend;
         private System.Windows.Forms.Label newDirectoryFileLength;
