@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileForm));
             this.datasetName = new System.Windows.Forms.TextBox();
-            this.directoryWithFile = new System.Windows.Forms.TextBox();
+            this.directoryWithFilesForSorting = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.NameFormLabel = new System.Windows.Forms.Label();
@@ -57,14 +57,13 @@
             this.datasetName.Name = "datasetName";
             this.datasetName.Size = new System.Drawing.Size(144, 20);
             this.datasetName.TabIndex = 0;
-            this.datasetName.TextChanged += new System.EventHandler(this.datasetName_TextChanged);
             // 
-            // directoryWithFile
+            // directoryWithFilesForSorting
             // 
-            this.directoryWithFile.Location = new System.Drawing.Point(292, 117);
-            this.directoryWithFile.Name = "directoryWithFile";
-            this.directoryWithFile.Size = new System.Drawing.Size(144, 20);
-            this.directoryWithFile.TabIndex = 1;
+            this.directoryWithFilesForSorting.Location = new System.Drawing.Point(292, 117);
+            this.directoryWithFilesForSorting.Name = "directoryWithFilesForSorting";
+            this.directoryWithFilesForSorting.Size = new System.Drawing.Size(144, 20);
+            this.directoryWithFilesForSorting.TabIndex = 1;
             // 
             // label1
             // 
@@ -145,7 +144,7 @@
             this.buttonOk.Size = new System.Drawing.Size(60, 29);
             this.buttonOk.TabIndex = 3;
             this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            this.buttonOk.Click += new System.EventHandler(this.ButtonOk_Click);
             // 
             // folderChooseButton
             // 
@@ -157,7 +156,7 @@
             this.folderChooseButton.Size = new System.Drawing.Size(123, 34);
             this.folderChooseButton.TabIndex = 2;
             this.folderChooseButton.UseVisualStyleBackColor = true;
-            this.folderChooseButton.Click += new System.EventHandler(this.folderChooseButton_Click);
+            this.folderChooseButton.Click += new System.EventHandler(this.FolderChooseButton_Click);
             // 
             // pictureBox5
             // 
@@ -230,7 +229,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.folderChooseButton);
-            this.Controls.Add(this.directoryWithFile);
+            this.Controls.Add(this.directoryWithFilesForSorting);
             this.Controls.Add(this.datasetName);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -253,7 +252,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox datasetName;
-        private System.Windows.Forms.TextBox directoryWithFile;
+        private System.Windows.Forms.TextBox directoryWithFilesForSorting;
         private System.Windows.Forms.Button folderChooseButton;
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Button buttonCancel;

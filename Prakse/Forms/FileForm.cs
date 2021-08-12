@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Linq;
-using System.IO;
 
 namespace Prakse
 {
@@ -10,47 +8,32 @@ namespace Prakse
     {
         private Point mouseOffset;
         private bool isMouseDown = false;
-        public FileForm() { InitializeComponent(); }
-
-        private void folderChooseButton_Click(object sender, EventArgs e)
+        private Dataset dataset = new Dataset();
+        public FileForm() 
         {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog(); // Atveram FolderBrowserDialog un izvēlamies mapi ar attēliem
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK) // Pārbaudām, vai lietotājs noklikšķina uz pogas (Labi)
-                directoryWithFile.Text = folderBrowserDialog1.SelectedPath; // Aizpildām TextBox ar mapes saiti
+            InitializeComponent();
+        }
 
-            if (directoryWithFile.Text != "") // Pārbaudām, vai TextBox nav tukšs
+        private void FolderChooseButton_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialogWithFilesForSorting = new FolderBrowserDialog(); // Atveram FolderBrowserDialog un izvēlamies mapi ar attēliem
+            if (folderBrowserDialogWithFilesForSorting.ShowDialog() == DialogResult.OK) // Pārbaudām, vai lietotājs noklikšķina uz pogas (Labi)
             {
-                string[] files = (from image in Directory.GetFiles(directoryWithFile.Text) 
-                                  where image.EndsWith(".jpg") || image.EndsWith(".jpeg") || image.EndsWith(".png") ||
-                                  image.EndsWith(".gif") || image.EndsWith(".tif") ||
-                                  image.EndsWith(".JPG") || image.EndsWith(".PNG")
-                                  select image).ToArray<string>(); // Veidojam masīvu ar attēliem
-                if (files.Length < 1) // Jā masīvs ir tukšs, tad tiks parādīts brīdinājums 
-                {
-                    MessageBox.Show(
-                        "Jūs izvēlējāties mapi, kurā nav attēlu!\nIzvēlieties mapi ar attēlu!",
-                        "Ziņojums",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information,
-                        MessageBoxDefaultButton.Button1);
-                    directoryWithFile.Text = "";
-                }
-            }
-            else
-            {
-                MessageBox.Show("Jūs izvēlējāties saiti, kurā ir tukša!");
+                directoryWithFilesForSorting.Text = (Dataset.DirectoryPathWithImages = folderBrowserDialogWithFilesForSorting.SelectedPath); // Aizpildām TextBox ar mapes saiti
             }
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private void ButtonOk_Click(object sender, EventArgs e)
         {
             if (datasetName.Text != "") // Tiek pārbaudīts, vai datukopas nosaukums ir ievadīts
             {
                 if (datasetName.Text.Length < 150)
                 {
-                    if (directoryWithFile.Text != "") // Tiek pārbaudīts, vai ir mapes saiti
+                    if (directoryWithFilesForSorting.Text != "") // Tiek pārbaudīts, vai ir mapes saiti
                     {
-                        ImportForm importForm = new ImportForm(datasetName.Text, directoryWithFile);
+                        Dataset.DatasetName = datasetName.Text; // Dataset
+                        dataset.FillImagesArray(); // Dataset
+                        ImportForm importForm = new ImportForm(dataset);
                         importForm.Visible = true;
                     }
                     else // Ja lietotājs vēlas izveidot tukšu datukopu
@@ -66,7 +49,6 @@ namespace Prakse
                         {
                             EmptyDataSet emptyDataSet = new EmptyDataSet(datasetName.Text);
                             emptyDataSet.Visible = true;
-                            datasetName.Text = "";
                         }
                     } 
                 }
@@ -76,16 +58,22 @@ namespace Prakse
                 }
             }
             else
-                MessageBox.Show("Kļūda! Lūdzu, aizpildiet mapes nosaukumu!");
-
+            {
+                MessageBox.Show("Kļūda! Lūdzu, aizpildiet datukopas nosaukumu!");
+            }
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e) { Close(); }
+        private void buttonCancel_Click(object sender, EventArgs e) 
+        {
+            Close();
+        }
 
         private void label4_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
+            {
                 WindowState = FormWindowState.Minimized;
+            }
         }
 
         private void NameFormLabel_MouseDown(object sender, MouseEventArgs e)
@@ -117,11 +105,6 @@ namespace Prakse
         {
             if (e.Button == MouseButtons.Left)
                 isMouseDown = false;
-        }
-
-        private void datasetName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

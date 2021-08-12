@@ -4,35 +4,29 @@ using System.Windows.Forms;
 
 namespace Prakse
 {
-    public partial class StartForm : Form
+    public partial class startForm : Form
     {
         private Point mouseOffset;
         private bool isMouseDown = false;
-        public StartForm() { InitializeComponent(); }
-
-        private void StartForm_Load(object sender, EventArgs e)
+        
+        public startForm() 
         {
-            jaunuDatuKopaToolStripMenuItem.Click += (s, a) =>
-            {
-                FileForm f = new FileForm();
-                f.Visible = true;
-            };
+            InitializeComponent(); 
+        }
 
-            atvērtDatuKopuToolStripMenuItem.Click += (s, a) =>
-            {
-                OpemForm open = new OpemForm();
-                open.Visible = true;
-            };
-
-            aizvērtToolStripMenuItem.Click += (s, a) => { Close(); };
-
-            CloseLabel.Click += (s, a) => { Close(); };
-
-            MinimLabel.Click += (s, a) =>
-            {
-                if (WindowState == FormWindowState.Normal)
-                    WindowState = FormWindowState.Minimized;
-            };
+        private void CreateNewDataset_Click(object sender, EventArgs e)
+        {
+            FileForm fileForm = new FileForm();
+            fileForm.Visible = true;
+        }
+        private void OpenDataset_Click(object sender, EventArgs e)
+        {
+            OpemForm openForm = new OpemForm();
+            openForm.Visible = true;
+        }
+        private void CloseApplication_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
 
@@ -49,8 +43,8 @@ namespace Prakse
                 mouseOffset = new Point(xOffset, yOffset);
                 isMouseDown = true;
             }
+            
         }
-
         private void StartForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (isMouseDown)
@@ -60,11 +54,15 @@ namespace Prakse
                 Location = mousePos;
             }
         }
-
         private void StartForm_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
                 isMouseDown = false;
+        }
+        private void MinimLabel_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Minimized;
         }
     }
 }

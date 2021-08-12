@@ -33,7 +33,7 @@
             this.lengthOfDataset = new System.Windows.Forms.Label();
             this.listBoxWithNewClass = new System.Windows.Forms.ListBox();
             this.ClassName = new System.Windows.Forms.Label();
-            this.textBoxAddNewClass = new System.Windows.Forms.TextBox();
+            this.textBoxWithNewClassName = new System.Windows.Forms.TextBox();
             this.addClassName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,11 +43,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonImport = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonClassRemove = new System.Windows.Forms.Button();
+            this.buttonAddNewClass = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.ChoseFolder = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.directoryPathForSortingFiles = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -97,12 +97,12 @@
             this.ClassName.TabIndex = 3;
             this.ClassName.Text = "Klašu saraksts";
             // 
-            // textBoxAddNewClass
+            // textBoxWithNewClassName
             // 
-            this.textBoxAddNewClass.Location = new System.Drawing.Point(209, 75);
-            this.textBoxAddNewClass.Name = "textBoxAddNewClass";
-            this.textBoxAddNewClass.Size = new System.Drawing.Size(307, 20);
-            this.textBoxAddNewClass.TabIndex = 6;
+            this.textBoxWithNewClassName.Location = new System.Drawing.Point(209, 75);
+            this.textBoxWithNewClassName.Name = "textBoxWithNewClassName";
+            this.textBoxWithNewClassName.Size = new System.Drawing.Size(307, 20);
+            this.textBoxWithNewClassName.TabIndex = 6;
             // 
             // addClassName
             // 
@@ -210,31 +210,31 @@
             this.buttonImport.UseVisualStyleBackColor = true;
             this.buttonImport.Click += new System.EventHandler(this.buttonImport_Click);
             // 
-            // buttonRemove
+            // buttonClassRemove
             // 
-            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.ForeColor = System.Drawing.Color.RosyBrown;
-            this.buttonRemove.Image = global::Prakse.Properties.Resources.button_nodzest;
-            this.buttonRemove.Location = new System.Drawing.Point(404, 93);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(112, 37);
-            this.buttonRemove.TabIndex = 5;
-            this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            this.buttonClassRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClassRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClassRemove.ForeColor = System.Drawing.Color.RosyBrown;
+            this.buttonClassRemove.Image = global::Prakse.Properties.Resources.button_nodzest;
+            this.buttonClassRemove.Location = new System.Drawing.Point(404, 93);
+            this.buttonClassRemove.Name = "buttonClassRemove";
+            this.buttonClassRemove.Size = new System.Drawing.Size(112, 37);
+            this.buttonClassRemove.TabIndex = 5;
+            this.buttonClassRemove.UseVisualStyleBackColor = true;
+            this.buttonClassRemove.Click += new System.EventHandler(this.ButtonClassRemove_Click);
             // 
-            // buttonAdd
+            // buttonAddNewClass
             // 
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.ForeColor = System.Drawing.Color.RosyBrown;
-            this.buttonAdd.Image = global::Prakse.Properties.Resources.button_pievienot;
-            this.buttonAdd.Location = new System.Drawing.Point(209, 97);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(106, 29);
-            this.buttonAdd.TabIndex = 4;
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonAddNewClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddNewClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddNewClass.ForeColor = System.Drawing.Color.RosyBrown;
+            this.buttonAddNewClass.Image = global::Prakse.Properties.Resources.button_pievienot;
+            this.buttonAddNewClass.Location = new System.Drawing.Point(209, 97);
+            this.buttonAddNewClass.Name = "buttonAddNewClass";
+            this.buttonAddNewClass.Size = new System.Drawing.Size(106, 29);
+            this.buttonAddNewClass.TabIndex = 4;
+            this.buttonAddNewClass.UseVisualStyleBackColor = true;
+            this.buttonAddNewClass.Click += new System.EventHandler(this.ButtonAddNewClass_Click);
             // 
             // pictureBox4
             // 
@@ -257,12 +257,12 @@
             this.ChoseFolder.UseVisualStyleBackColor = true;
             this.ChoseFolder.Click += new System.EventHandler(this.ChoseFolder_Click);
             // 
-            // textBox1
+            // directoryPathForSortingFiles
             // 
-            this.textBox1.Location = new System.Drawing.Point(293, 249);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 19;
+            this.directoryPathForSortingFiles.Location = new System.Drawing.Point(293, 249);
+            this.directoryPathForSortingFiles.Name = "directoryPathForSortingFiles";
+            this.directoryPathForSortingFiles.Size = new System.Drawing.Size(100, 20);
+            this.directoryPathForSortingFiles.TabIndex = 19;
             // 
             // label1
             // 
@@ -280,7 +280,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(535, 322);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.directoryPathForSortingFiles);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ChoseFolder);
             this.Controls.Add(this.label5);
@@ -292,9 +292,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonImport);
             this.Controls.Add(this.addClassName);
-            this.Controls.Add(this.textBoxAddNewClass);
-            this.Controls.Add(this.buttonRemove);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.textBoxWithNewClassName);
+            this.Controls.Add(this.buttonClassRemove);
+            this.Controls.Add(this.buttonAddNewClass);
             this.Controls.Add(this.ClassName);
             this.Controls.Add(this.listBoxWithNewClass);
             this.Controls.Add(this.lengthOfDataset);
@@ -324,9 +324,9 @@
         private System.Windows.Forms.Label lengthOfDataset;
         private System.Windows.Forms.ListBox listBoxWithNewClass;
         private System.Windows.Forms.Label ClassName;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.TextBox textBoxAddNewClass;
+        private System.Windows.Forms.Button buttonAddNewClass;
+        private System.Windows.Forms.Button buttonClassRemove;
+        private System.Windows.Forms.TextBox textBoxWithNewClassName;
         private System.Windows.Forms.Label addClassName;
         private System.Windows.Forms.Button buttonImport;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -338,7 +338,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ChoseFolder;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox directoryPathForSortingFiles;
         private System.Windows.Forms.Label label1;
     }
 }

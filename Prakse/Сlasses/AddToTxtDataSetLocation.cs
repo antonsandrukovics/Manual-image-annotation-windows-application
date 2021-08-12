@@ -16,30 +16,45 @@ namespace Prakse
                 FileStream datuKopuVieta = new FileStream("datuKopuVieta.txt",
                     FileMode.OpenOrCreate, FileAccess.Read);
 
-                StreamReader reader = new StreamReader(datuKopuVieta);
-                string datukopa = reader.ReadToEnd();
-                reader.Close();
-                datuKopuVieta.Close();
-
+                string datukopa = GetInformationFromTxt(datuKopuVieta);
 
                 FileStream datuKopuVieta1 = new FileStream("datuKopuVieta.txt",
                     FileMode.OpenOrCreate, FileAccess.Write);
 
-                StreamWriter writer = new StreamWriter(datuKopuVieta1);
-                writer.WriteLine(datukopa);
-                writer.Write(datasetLocation + $"\\{datasetName}");
-                writer.Close();
-                datuKopuVieta1.Close();
+                AddInformationToTxt(datasetLocation, datasetName, datukopa, datuKopuVieta1);
             }
             else
             {
-                FileStream datuKopuVieta1 = new FileStream("datuKopuVieta.txt",
-                        FileMode.OpenOrCreate, FileAccess.Write);
-                StreamWriter writer = new StreamWriter(datuKopuVieta1);
-                writer.Write(datasetLocation + $"\\{datasetName}");
-                writer.Close();
-                datuKopuVieta1.Close();
+                GetInformationToEmptyTxt(datasetLocation, datasetName);
             }
+        }
+
+        private static void GetInformationToEmptyTxt(string datasetLocation, string datasetName)
+        {
+            FileStream datuKopuVieta1 = new FileStream("datuKopuVieta.txt",
+                                    FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(datuKopuVieta1);
+            writer.Write(datasetLocation + $"\\{datasetName}");
+            writer.Close();
+            datuKopuVieta1.Close();
+        }
+
+        private static void AddInformationToTxt(string datasetLocation, string datasetName, string datukopa, FileStream datuKopuVieta1)
+        {
+            StreamWriter writer = new StreamWriter(datuKopuVieta1);
+            writer.WriteLine(datukopa);
+            writer.Write(datasetLocation + $"\\{datasetName}");
+            writer.Close();
+            datuKopuVieta1.Close();
+        }
+
+        private static string GetInformationFromTxt(FileStream datuKopuVieta)
+        {
+            StreamReader reader = new StreamReader(datuKopuVieta);
+            string datukopa = reader.ReadToEnd();
+            reader.Close();
+            datuKopuVieta.Close();
+            return datukopa;
         }
 
         public AddToTxtDataSetLocation(string newDataSetName, string oldDataSetName, bool a)
@@ -47,6 +62,11 @@ namespace Prakse
             FileStream datuKopuVieta = new FileStream("datuKopuVieta.txt",
                     FileMode.OpenOrCreate, FileAccess.Read);
 
+            RenameOldDatasetName(newDataSetName, oldDataSetName, datuKopuVieta);
+        }
+
+        private static void RenameOldDatasetName(string newDataSetName, string oldDataSetName, FileStream datuKopuVieta)
+        {
             StreamReader reader = new StreamReader(datuKopuVieta);
             List<string> dataSet = new List<string>();
             string x = "";

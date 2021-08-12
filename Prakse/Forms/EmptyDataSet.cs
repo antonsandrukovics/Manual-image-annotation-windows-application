@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -33,9 +27,7 @@ namespace Prakse
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            Directory.CreateDirectory($"{directoryWithFile.Text}\\{nameDataSet}\\Train");
-            Directory.CreateDirectory($"{directoryWithFile.Text}\\{nameDataSet}\\Val");
-            Directory.CreateDirectory($"{directoryWithFile.Text}\\{nameDataSet}\\Test");
+            CreateDirectory();
 
             DBSqlite sqlitePrakseEmptyDataSet = new DBSqlite($"{directoryWithFile.Text}\\{nameDataSet}");
 
@@ -51,6 +43,13 @@ namespace Prakse
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
                 if (Application.OpenForms[i].Name != "StartForm")
                     Application.OpenForms[i].Close();
+        }
+
+        private void CreateDirectory()
+        {
+            Directory.CreateDirectory($"{directoryWithFile.Text}\\{nameDataSet}\\Train");
+            Directory.CreateDirectory($"{directoryWithFile.Text}\\{nameDataSet}\\Val");
+            Directory.CreateDirectory($"{directoryWithFile.Text}\\{nameDataSet}\\Test");
         }
 
         private void NameFormLabel_MouseDown(object sender, MouseEventArgs e)
