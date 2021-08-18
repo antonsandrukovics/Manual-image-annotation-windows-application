@@ -18,7 +18,7 @@ namespace Prakse
 
         private void ImportForm_Load(object sender, EventArgs e)
         {
-            NameOfDataset.Text += Dataset.DatasetName;
+            NameOfDataset.Text += dataset1.DatasetName;
             lengthOfDataset.Text += dataset1.ArrayWithImagesPath.Length;
         }
 
@@ -148,7 +148,7 @@ namespace Prakse
             }
             if (directoryPathForSortingFiles.Text != "")
             {
-                TxtDataSet addToTxt = new TxtDataSet(directoryPathForSortingFiles.Text, Dataset.DatasetName); 
+                TxtDataSet addToTxt = new TxtDataSet(directoryPathForSortingFiles.Text, dataset1.DatasetName); 
             }
             else
             {

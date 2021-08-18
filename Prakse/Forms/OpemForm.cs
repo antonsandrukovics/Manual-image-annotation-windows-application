@@ -133,7 +133,7 @@ namespace Prakse
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                newDirectoryPathWithImage.Text = (Dataset.DirectoryPathWithImages = folderBrowserDialog1.SelectedPath);
+                newDirectoryPathWithImage.Text = (dataset.DirectoryPathWithImages = folderBrowserDialog1.SelectedPath);
             }
         }
 
@@ -147,14 +147,14 @@ namespace Prakse
 
                     if (File.Exists($"{checkedItemPath}\\{Path.GetFileName(checkedItemPath)}.db"))
                     {
-                        Dataset.DatasetName = checkedItemPath;
+                        dataset.DatasetName = checkedItemPath;
                         OpenImageForm();
                     }                        
                     else
                     {
                         if (File.Exists($"{Path.GetDirectoryName(checkedItemPath)}\\{newNameDataSet}\\{newNameDataSet}.db"))
                         {
-                            Dataset.DatasetName = $"{Path.GetDirectoryName(checkedItemPath)}\\{newNameDataSet}";
+                            dataset.DatasetName = $"{Path.GetDirectoryName(checkedItemPath)}\\{newNameDataSet}";
                             OpenImageForm();
                         }
                         else

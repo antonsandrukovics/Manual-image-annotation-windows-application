@@ -10,8 +10,8 @@ namespace Prakse
 {
     public partial class Dataset
     {
-        private static string datasetName;
-        private static string directoryPathWithImages;
+        private string datasetName;
+        private string directoryPathWithImages;
         private string[] arrayWithImagesPath;
         private List<string> clasesNamesList = new List<string>();
         private string directoryPathForSortingFiles;
@@ -22,6 +22,35 @@ namespace Prakse
         {
             
         }
+
+        public string DatasetName
+        {
+            get { return datasetName; }
+            set
+            {
+                if (value.Length < 150 && value != "")
+                {
+                    datasetName = value;
+                }
+                else
+                {
+                    MessageBox.Show("Kļūda! Datukopas nosaukums nevar būt garāks par 150 rakstzīmēm!");
+                }
+            }
+        }
+        public string DirectoryPathWithImages
+        {
+            get { return directoryPathWithImages; }
+            set
+            {
+                if (GetArrayOfImagesPaths(value).Length > 0)
+                {
+                    directoryPathWithImages = value;
+                }
+            }
+        }
+
+
         public List<string> UrlList
         {
             get { return urlList; }
@@ -48,32 +77,7 @@ namespace Prakse
             get { return clasesNamesList; }
             set { clasesNamesList = value; }
         }
-        public static string DatasetName
-        {
-            get { return datasetName; }
-            set 
-            {
-                if (value.Length < 150 && value != "")
-                {
-                    datasetName = value; 
-                }
-                else
-                {
-                    MessageBox.Show("Kļūda! Datukopas nosaukums nevar būt garāks par 150 rakstzīmēm!");
-                }
-            }
-        }
-        public static string DirectoryPathWithImages
-        {
-            get { return directoryPathWithImages; }
-            set 
-            {
-                if (GetArrayOfImagesPaths(value).Length > 0)
-                { 
-                    directoryPathWithImages = value;
-                }
-            }
-        }
+        
         public List<string> GetExistingDatasetPath()
         {
             List<string> existingDataset = new List<string>();

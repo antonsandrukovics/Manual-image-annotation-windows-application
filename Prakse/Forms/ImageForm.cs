@@ -25,7 +25,7 @@ namespace Prakse
             InitializeComponent();
             dataset1 = dataset;
             InitializeVariablesAndAddInformationToScreen(dataset);
-            oldFolderName = $"{dataset.DirectoryPathForSortingFiles}\\{Dataset.DatasetName}";
+            oldFolderName = $"{dataset.DirectoryPathForSortingFiles}\\{dataset.DatasetName}";
             Directory.CreateDirectory(oldFolderName);
         }
         public ImageForm(Dataset dataset, bool openForm = false)
@@ -33,10 +33,10 @@ namespace Prakse
             InitializeComponent();
             dataset1 = dataset;
             InitializeVariablesAndAddInformationToScreen(dataset);
-            oldFolderName = Dataset.DatasetName;
+            oldFolderName = dataset.DatasetName;
             this.openForm = openForm;
 
-            GetInformationFromDB(Dataset.DatasetName);
+            GetInformationFromDB(dataset.DatasetName);
             getURLToComboBox();
             getLicenceToComboBox();
         }

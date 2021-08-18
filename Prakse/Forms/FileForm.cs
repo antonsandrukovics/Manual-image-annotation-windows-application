@@ -19,7 +19,7 @@ namespace Prakse
             FolderBrowserDialog folderBrowserDialogWithFilesForSorting = new FolderBrowserDialog(); // Atveram FolderBrowserDialog un izvēlamies mapi ar attēliem
             if (folderBrowserDialogWithFilesForSorting.ShowDialog() == DialogResult.OK) // Pārbaudām, vai lietotājs noklikšķina uz pogas (Labi)
             {
-                directoryWithFilesForSorting.Text = (Dataset.DirectoryPathWithImages = folderBrowserDialogWithFilesForSorting.SelectedPath); // Aizpildām TextBox ar mapes saiti
+                directoryWithFilesForSorting.Text = (dataset.DirectoryPathWithImages = folderBrowserDialogWithFilesForSorting.SelectedPath); // Aizpildām TextBox ar mapes saiti
             }
         }
 
@@ -31,7 +31,7 @@ namespace Prakse
                 {
                     if (directoryWithFilesForSorting.Text != "") // Tiek pārbaudīts, vai ir mapes saiti
                     {
-                        Dataset.DatasetName = datasetName.Text; // Dataset
+                        dataset.DatasetName = datasetName.Text; // Dataset
                         dataset.FillImagesArray(); // Dataset
                         ImportForm importForm = new ImportForm(dataset);
                         importForm.Visible = true;
