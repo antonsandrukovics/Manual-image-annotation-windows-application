@@ -148,7 +148,7 @@ namespace Prakse
             }
             if (directoryPathForSortingFiles.Text != "")
             {
-                AddToTxtDataSetLocation addToTxt = new AddToTxtDataSetLocation(directoryPathForSortingFiles.Text, Dataset.DatasetName); 
+                TxtDataSet addToTxt = new TxtDataSet(directoryPathForSortingFiles.Text, Dataset.DatasetName); 
             }
             else
             {

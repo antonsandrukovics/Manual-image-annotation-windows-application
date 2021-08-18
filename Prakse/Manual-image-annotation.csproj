@@ -69,7 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Сlasses\AddToTxtDataSetLocation.cs" />
+    <Compile Include="Сlasses\TxtDataSet.cs" />
     <Compile Include="Сlasses\Dataset.cs" />
     <Compile Include="Forms\EmptyDataSet.cs">
       <SubType>Form</SubType>

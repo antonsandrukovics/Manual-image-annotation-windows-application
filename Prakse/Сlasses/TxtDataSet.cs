@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace Prakse
 {
-    class AddToTxtDataSetLocation
+    class TxtDataSet
     {
-        public AddToTxtDataSetLocation(string datasetLocation, string datasetName)
+        public TxtDataSet(string datasetLocation, string datasetName)
         {
             if (File.Exists("datuKopuVieta.txt"))
             {
@@ -57,7 +57,7 @@ namespace Prakse
             return datukopa;
         }
 
-        public AddToTxtDataSetLocation(string newDataSetName, string oldDataSetName, bool a)
+        public TxtDataSet(string newDataSetName, string oldDataSetName, bool a)
         {
             FileStream datuKopuVieta = new FileStream("datuKopuVieta.txt",
                     FileMode.OpenOrCreate, FileAccess.Read);

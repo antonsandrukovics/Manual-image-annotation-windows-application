@@ -31,7 +31,7 @@ namespace Prakse
 
             DBSqlite sqlitePrakseEmptyDataSet = new DBSqlite($"{directoryWithFile.Text}\\{nameDataSet}");
 
-            AddToTxtDataSetLocation addToTxt = new AddToTxtDataSetLocation(directoryWithFile.Text, nameDataSet);
+            TxtDataSet addToTxt = new TxtDataSet(directoryWithFile.Text, nameDataSet);
 
             MessageBox.Show(
                     $"Datukopa \"{nameDataSet}\" ir izveidota!",

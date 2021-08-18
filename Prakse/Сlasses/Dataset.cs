@@ -128,7 +128,7 @@ namespace Prakse
             {
                 MessageBox.Show(ex.Message);
             }
-            AddToTxtDataSetLocation addToTxt = new AddToTxtDataSetLocation(newName, oldDatasetPath, true);
+            TxtDataSet addToTxt = new TxtDataSet(newName, oldDatasetPath, true);
 
             MessageBox.Show("Nosaukums ir mainīts!");
         }
